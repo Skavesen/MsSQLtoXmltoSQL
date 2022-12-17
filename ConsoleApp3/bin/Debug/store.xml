@@ -1,0 +1,66 @@
+<?xml version="1.0" standalone="yes"?>
+<root>
+  <Table>
+    <id>1</id>
+    <customer>Бондаренко Вадим Викторович</customer>
+    <phone>9915401077</phone>
+    <product>Видеокарта Мощная, крутая видюха </product>
+    <date>2022-12-16T18:01:45+03:00</date>
+  </Table>
+  <Table>
+    <id>2</id>
+    <customer>Бондаренко Вадим Викторович</customer>
+    <phone>9915401077</phone>
+    <product>Монитор 24 дюйма </product>
+    <date>2022-12-16T18:01:45+03:00</date>
+  </Table>
+  <Table>
+    <id>3</id>
+    <customer>Бондаренко Вадим Викторович</customer>
+    <phone>9915401077</phone>
+    <product>Процессор интел </product>
+    <date>2022-12-16T18:01:45+03:00</date>
+  </Table>
+  <Table>
+    <id>4</id>
+    <customer>Бондаренко Вадим Викторович</customer>
+    <phone>9915401077</phone>
+    <product>Видеокарта Мощная, крутая видюха </product>
+    <date>2022-12-10T18:01:55+03:00</date>
+  </Table>
+  <Table>
+    <id>5</id>
+    <customer>Бондаренко Вадим Викторович</customer>
+    <phone>9915401077</phone>
+    <product>SSD 240 gb </product>
+    <date>2022-12-10T18:01:55+03:00</date>
+  </Table>
+  <Table>
+    <id>6</id>
+    <customer>Глушков Андрей Генадьевич</customer>
+    <phone>9915401089</phone>
+    <product>SSD 240 gb </product>
+    <date>2022-12-18T18:02:05+03:00</date>
+  </Table>
+  <Table>
+    <id>7</id>
+    <customer>Глушков Андрей Генадьевич</customer>
+    <phone>9915401089</phone>
+    <product>Монитор 24 дюйма </product>
+    <date>2022-12-18T18:02:05+03:00</date>
+  </Table>
+  <Table>
+    <id>8</id>
+    <customer>Глушков Андрей Генадьевич</customer>
+    <phone>9915401089</phone>
+    <product>Видеокарта Мощная, крутая видюха </product>
+    <date>2022-12-17T18:02:12+03:00</date>
+  </Table>
+  <Table>
+    <id>9</id>
+    <customer>Глушков Андрей Генадьевич</customer>
+    <phone>9915401089</phone>
+    <product>Монитор 24 дюйма </product>
+    <date>2022-12-17T18:02:12+03:00</date>
+  </Table>
+</root>

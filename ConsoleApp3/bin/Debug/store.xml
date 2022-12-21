@@ -1,66 +1,183 @@
 <?xml version="1.0" standalone="yes"?>
 <root>
   <Table>
-    <id>1</id>
-    <customer>Бондаренко Вадим Викторович</customer>
+    <id_orderProduct>1</id_orderProduct>
+    <id_order>1</id_order>
+    <date_time>2022-12-16T18:01:45+03:00</date_time>
+    <id_customer>1</id_customer>
+    <name>Вадим</name>
+    <surname>Бондаренко</surname>
+    <patronymic>Викторович</patronymic>
+    <id_city>2</id_city>
+    <city>Москва</city>
+    <address>Суворова, 46</address>
     <phone>9915401077</phone>
-    <product>Видеокарта Мощная, крутая видюха </product>
-    <date>2022-12-16T18:01:45+03:00</date>
+    <id_product>1</id_product>
+    <name1>Видеокарта</name1>
+    <description>Мощная, крутая видюха</description>
+    <price>100000</price>
+    <id_category>1</id_category>
+    <category>Компьютерная техника</category>
+    <is_available>true</is_available>
   </Table>
   <Table>
-    <id>2</id>
-    <customer>Бондаренко Вадим Викторович</customer>
+    <id_orderProduct>2</id_orderProduct>
+    <id_order>1</id_order>
+    <date_time>2022-12-16T18:01:45+03:00</date_time>
+    <id_customer>1</id_customer>
+    <name>Вадим</name>
+    <surname>Бондаренко</surname>
+    <patronymic>Викторович</patronymic>
+    <id_city>2</id_city>
+    <city>Москва</city>
+    <address>Суворова, 46</address>
     <phone>9915401077</phone>
-    <product>Монитор 24 дюйма </product>
-    <date>2022-12-16T18:01:45+03:00</date>
+    <id_product>2</id_product>
+    <name1>Монитор</name1>
+    <description>24 дюйма</description>
+    <price>9000</price>
+    <id_category>1</id_category>
+    <category>Компьютерная техника</category>
+    <is_available>true</is_available>
   </Table>
   <Table>
-    <id>3</id>
-    <customer>Бондаренко Вадим Викторович</customer>
+    <id_orderProduct>3</id_orderProduct>
+    <id_order>1</id_order>
+    <date_time>2022-12-16T18:01:45+03:00</date_time>
+    <id_customer>1</id_customer>
+    <name>Вадим</name>
+    <surname>Бондаренко</surname>
+    <patronymic>Викторович</patronymic>
+    <id_city>2</id_city>
+    <city>Москва</city>
+    <address>Суворова, 46</address>
     <phone>9915401077</phone>
-    <product>Процессор интел </product>
-    <date>2022-12-16T18:01:45+03:00</date>
+    <id_product>3</id_product>
+    <name1>Процессор</name1>
+    <description>интел</description>
+    <price>14000</price>
+    <id_category>1</id_category>
+    <category>Компьютерная техника</category>
+    <is_available>true</is_available>
   </Table>
   <Table>
-    <id>4</id>
-    <customer>Бондаренко Вадим Викторович</customer>
+    <id_orderProduct>4</id_orderProduct>
+    <id_order>2</id_order>
+    <date_time>2022-12-10T18:01:55+03:00</date_time>
+    <id_customer>1</id_customer>
+    <name>Вадим</name>
+    <surname>Бондаренко</surname>
+    <patronymic>Викторович</patronymic>
+    <id_city>2</id_city>
+    <city>Москва</city>
+    <address>Суворова, 46</address>
     <phone>9915401077</phone>
-    <product>Видеокарта Мощная, крутая видюха </product>
-    <date>2022-12-10T18:01:55+03:00</date>
+    <id_product>1</id_product>
+    <name1>Видеокарта</name1>
+    <description>Мощная, крутая видюха</description>
+    <price>100000</price>
+    <id_category>1</id_category>
+    <category>Компьютерная техника</category>
+    <is_available>true</is_available>
   </Table>
   <Table>
-    <id>5</id>
-    <customer>Бондаренко Вадим Викторович</customer>
+    <id_orderProduct>5</id_orderProduct>
+    <id_order>2</id_order>
+    <date_time>2022-12-10T18:01:55+03:00</date_time>
+    <id_customer>1</id_customer>
+    <name>Вадим</name>
+    <surname>Бондаренко</surname>
+    <patronymic>Викторович</patronymic>
+    <id_city>2</id_city>
+    <city>Москва</city>
+    <address>Суворова, 46</address>
     <phone>9915401077</phone>
-    <product>SSD 240 gb </product>
-    <date>2022-12-10T18:01:55+03:00</date>
+    <id_product>4</id_product>
+    <name1>SSD</name1>
+    <description>240 gb</description>
+    <price>2400</price>
+    <id_category>1</id_category>
+    <category>Компьютерная техника</category>
+    <is_available>true</is_available>
   </Table>
   <Table>
-    <id>6</id>
-    <customer>Глушков Андрей Генадьевич</customer>
+    <id_orderProduct>6</id_orderProduct>
+    <id_order>3</id_order>
+    <date_time>2022-12-18T18:02:05+03:00</date_time>
+    <id_customer>2</id_customer>
+    <name>Андрей</name>
+    <surname>Глушков</surname>
+    <patronymic>Генадьевич</patronymic>
+    <id_city>3</id_city>
+    <city>Питер</city>
+    <address>Прокопенко, 13</address>
     <phone>9915401089</phone>
-    <product>SSD 240 gb </product>
-    <date>2022-12-18T18:02:05+03:00</date>
+    <id_product>4</id_product>
+    <name1>SSD</name1>
+    <description>240 gb</description>
+    <price>2400</price>
+    <id_category>1</id_category>
+    <category>Компьютерная техника</category>
+    <is_available>true</is_available>
   </Table>
   <Table>
-    <id>7</id>
-    <customer>Глушков Андрей Генадьевич</customer>
+    <id_orderProduct>7</id_orderProduct>
+    <id_order>3</id_order>
+    <date_time>2022-12-18T18:02:05+03:00</date_time>
+    <id_customer>2</id_customer>
+    <name>Андрей</name>
+    <surname>Глушков</surname>
+    <patronymic>Генадьевич</patronymic>
+    <id_city>3</id_city>
+    <city>Питер</city>
+    <address>Прокопенко, 13</address>
     <phone>9915401089</phone>
-    <product>Монитор 24 дюйма </product>
-    <date>2022-12-18T18:02:05+03:00</date>
+    <id_product>2</id_product>
+    <name1>Монитор</name1>
+    <description>24 дюйма</description>
+    <price>9000</price>
+    <id_category>1</id_category>
+    <category>Компьютерная техника</category>
+    <is_available>true</is_available>
   </Table>
   <Table>
-    <id>8</id>
-    <customer>Глушков Андрей Генадьевич</customer>
+    <id_orderProduct>8</id_orderProduct>
+    <id_order>4</id_order>
+    <date_time>2022-12-17T18:02:12+03:00</date_time>
+    <id_customer>2</id_customer>
+    <name>Андрей</name>
+    <surname>Глушков</surname>
+    <patronymic>Генадьевич</patronymic>
+    <id_city>3</id_city>
+    <city>Питер</city>
+    <address>Прокопенко, 13</address>
     <phone>9915401089</phone>
-    <product>Видеокарта Мощная, крутая видюха </product>
-    <date>2022-12-17T18:02:12+03:00</date>
+    <id_product>1</id_product>
+    <name1>Видеокарта</name1>
+    <description>Мощная, крутая видюха</description>
+    <price>100000</price>
+    <id_category>1</id_category>
+    <category>Компьютерная техника</category>
+    <is_available>true</is_available>
   </Table>
   <Table>
-    <id>9</id>
-    <customer>Глушков Андрей Генадьевич</customer>
+    <id_orderProduct>9</id_orderProduct>
+    <id_order>4</id_order>
+    <date_time>2022-12-17T18:02:12+03:00</date_time>
+    <id_customer>2</id_customer>
+    <name>Андрей</name>
+    <surname>Глушков</surname>
+    <patronymic>Генадьевич</patronymic>
+    <id_city>3</id_city>
+    <city>Питер</city>
+    <address>Прокопенко, 13</address>
     <phone>9915401089</phone>
-    <product>Монитор 24 дюйма </product>
-    <date>2022-12-17T18:02:12+03:00</date>
+    <id_product>2</id_product>
+    <name1>Монитор</name1>
+    <description>24 дюйма</description>
+    <price>9000</price>
+    <id_category>1</id_category>
+    <category>Компьютерная техника</category>
+    <is_available>true</is_available>
   </Table>
 </root>

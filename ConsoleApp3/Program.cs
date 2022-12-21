@@ -16,9 +16,26 @@ namespace ConsoleApp3
         static void Main(string[] args)
         {
             SqlDataAdapter adpter = new SqlDataAdapter();
-            Purchasing p = new Purchasing();
+
+            List<Category> category;
+            List<City> city;
+            List<Customer> customer;
+            List<Product> product;
+            List<Order> order;
+            List<OrderProduct> orderProduct;
+
+            XmlSerializer deserializer;
+            SqlCommand command;
             string connectionString = "Server=DESKTOP-JQDC5MV;Database=Store;Trusted_Connection=True;";
-            string sql = "SELECT * FROM Query";
+
+            string sql = "SELECT OrderProduct.id_orderProduct,  [Order].id_order,  [Order].date_time,  Customer.id_customer,  " +
+                "Customer.name,  Customer.surname,  Customer.patronymic,  City.id_city,  City.city,  Customer.address,  Customer.phone, " +
+                " Product.id_product,  Product.name,  Product.description,  Product.price,  Category.id_category,  Category.category, " +
+                " Product.is_available FROM dbo.OrderProduct INNER JOIN dbo.[Order] ON  OrderProduct.id_order = [Order].id_order " +
+                "INNER JOIN dbo.Customer ON  [Order].id_customer = Customer.id_customer " +
+                "INNER JOIN dbo.City ON  Customer.id_city = City.id_city " +
+                "INNER JOIN dbo.Product ON  OrderProduct.id_product = Product.id_product " +
+                "INNER JOIN dbo.Category ON  Product.id_category = Category.id_category";
             //чтение из бд
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -28,52 +45,86 @@ namespace ConsoleApp3
                 ds.WriteXml("store.xml", XmlWriteMode.IgnoreSchema);
                 Console.WriteLine("Текст записан в файл");
             }
-            //1 метод десериализации
-            List<Purchasing> purchasing;
             using (var reader = new StreamReader("store.xml"))
             {
-                XmlSerializer deserializer = new XmlSerializer(typeof(List<Purchasing>),
-                    new XmlRootAttribute("root"));
-                purchasing = (List<Purchasing>)deserializer.Deserialize(reader);
-            }
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                for (int i = 0; i <= purchasing.Count - 1; i++)
-                {
-                    sql = "insert into Purchasing values(" + purchasing[i].Id + ",'" + purchasing[i].customer + "','" + purchasing[i].phone + "','" + purchasing[i].product + "','" + purchasing[i].date + "')";
-                    SqlCommand command = new SqlCommand(sql, connection);
-                    adpter.InsertCommand = command;
-                    adpter.InsertCommand.ExecuteNonQuery();
-                }
-                Console.WriteLine("Текст записан в бд 1 метод");
-            }
-            // 2 метод просто из xml
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                XmlReader xmlFile = XmlReader.Create("store.xml", new XmlReaderSettings());
-                DataSet ds = new DataSet();
-                ds.ReadXml(xmlFile);
-                for (int i = 0; i <= ds.Tables[0].Rows.Count - 1; i++)
-                {
-                    p.Id = Convert.ToInt32(ds.Tables[0].Rows[i].ItemArray[0]);
-                    p.customer = ds.Tables[0].Rows[i].ItemArray[1].ToString();
-                    p.phone = ds.Tables[0].Rows[i].ItemArray[2].ToString();
-                    p.product = ds.Tables[0].Rows[i].ItemArray[3].ToString();
-                    p.date = ds.Tables[0].Rows[i].ItemArray[4].ToString();
+                deserializer = new XmlSerializer(typeof(List<Category>), new XmlRootAttribute("root"));
+                category = (List<Category>)deserializer.Deserialize(reader);
 
-                    sql = "insert into Purchasing values(" + p.Id + ",'" + p.customer + "','" + p.phone + "','" + p.product + "','" + p.date + "')";
-                    SqlCommand command = new SqlCommand(sql, connection);
+                deserializer = new XmlSerializer(typeof(List<City>), new XmlRootAttribute("root"));
+                city = (List<City>)deserializer.Deserialize(reader);
+
+                deserializer = new XmlSerializer(typeof(List<Customer>), new XmlRootAttribute("root"));
+                customer = (List<Customer>)deserializer.Deserialize(reader);
+
+                deserializer = new XmlSerializer(typeof(List<Product>), new XmlRootAttribute("root"));
+                product = (List<Product>)deserializer.Deserialize(reader);
+
+                deserializer = new XmlSerializer(typeof(List<Order>), new XmlRootAttribute("root"));
+                order = (List<Order>)deserializer.Deserialize(reader);
+
+                deserializer = new XmlSerializer(typeof(List<OrderProduct>), new XmlRootAttribute("root"));
+                orderProduct = (List<OrderProduct>)deserializer.Deserialize(reader);
+            }
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                for (int i = 0; i <= category.Count - 1; i++)
+                {
+                    sql = "insert into Category values(" + category[i].Id + ",'" + category[i].category + "')";
+                    command = new SqlCommand(sql, connection);
                     adpter.InsertCommand = command;
                     adpter.InsertCommand.ExecuteNonQuery();
                 }
-                Console.WriteLine("Текст записан в бд 2 метод");
-            }
+                Console.WriteLine("Category заполнена");
+
+                for (int i = 0; i <= city.Count - 1; i++)
+                {
+                    sql = "insert into City values(" + city[i].Id + ",'" + city[i].city + "')";
+                    command = new SqlCommand(sql, connection);
+                    adpter.InsertCommand = command;
+                    adpter.InsertCommand.ExecuteNonQuery();
+                }
+                Console.WriteLine("City заполнена");
+
+                for (int i = 0; i <= customer.Count - 1; i++)
+                {
+                    sql = "insert into Customer values(" + customer[i].Id + ",'" + customer[i].surname + "','" + customer[i].name + "','" + customer[i].patrtonymic + "','" + customer[i].phone + "','" + customer[i].id_city + "','" + customer[i].address + "','" + customer[i].phone + "')";
+                    command = new SqlCommand(sql, connection);
+                    adpter.InsertCommand = command;
+                    adpter.InsertCommand.ExecuteNonQuery();
+                }
+                Console.WriteLine("Customer заполнена");
+
+                for (int i = 0; i <= product.Count - 1; i++)
+                {
+                    sql = "insert into Product values(" + product[i].Id + ",'" + product[i].name + "','" + product[i].description + "','" + product[i].price + "'," + product[i].id_category + "," + product[i].is_available + ")";
+                    command = new SqlCommand(sql, connection);
+                    adpter.InsertCommand = command;
+                    adpter.InsertCommand.ExecuteNonQuery();
+                }
+                Console.WriteLine("Product заполнена");
+
+                for (int i = 0; i <= order.Count - 1; i++)
+                {
+                    sql = "insert into Order values(" + order[i].Id + "," + order[i].id_customer + ",'" + order[i].dare_time + "')";
+                    command = new SqlCommand(sql, connection);
+                    adpter.InsertCommand = command;
+                    adpter.InsertCommand.ExecuteNonQuery();
+                }
+                Console.WriteLine("Order заполнена");
+
+                for (int i = 0; i <= orderProduct.Count - 1; i++)
+                {
+                    sql = "insert into OrderProduct values(" + orderProduct[i].Id + "," + orderProduct[i].id_order + "," + orderProduct[i].id_product + ")";
+                    command = new SqlCommand(sql, connection);
+                    adpter.InsertCommand = command;
+                    adpter.InsertCommand.ExecuteNonQuery();
+                }
+                Console.WriteLine("OrderProduct заполнена");
+            }               
 
             Console.Read();
         }
-
 
     }
 }
